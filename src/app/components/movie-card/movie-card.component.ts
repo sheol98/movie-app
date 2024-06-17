@@ -10,11 +10,11 @@ import { FormatNumberPipe } from '../../pipes/format-number.pipe';
 })
 export class MovieCardComponent {
   @Input() data: any;
-  @Output() addToFavorite = new EventEmitter<any>();
+  @Output() addToFavoriteList = new EventEmitter<any>();
   @Output() addToWatchList = new EventEmitter<any>();
 
   onAddToFavorite() {
-    this.addToFavorite.emit();
+    this.addToFavoriteList.emit();
   }
   onAddToWatchList() {
     this.addToWatchList.emit();
