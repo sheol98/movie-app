@@ -10,4 +10,5 @@ import { MovieListComponent } from "./components/movie-list/movie-list.component
 })
 export class AppComponent {
   title = 'angular-course';
+  a = 22
 }
