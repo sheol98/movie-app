@@ -42,26 +42,10 @@ export class MovieListComponent {
   favoriteList: any[] = [];
   watchList: any[] = [];
   pushToFavorite(item: any) {
-    if (this.favoriteList.length === 0) this.favoriteList.push(item);
-    else {
-      let checkMovie = true;
-      for (const movie of this.favoriteList) {
-        if (item.id === movie.id) checkMovie = false;
-      }
-      if (checkMovie) this.favoriteList.push(item);
-    }
-    console.log(this.favoriteList);
+    if (!this.favoriteList.includes(item)) this.favoriteList.push(item);
   }
   pushToWatchList(item: any) {
-    if (this.watchList.length === 0) this.watchList.push(item);
-    else {
-      let checkMovie = true;
-      for (const movie of this.watchList) {
-        if (item.id === movie.id) checkMovie = false;
-      }
-      if (checkMovie) this.watchList.push(item);
-    }
-    console.log(this.watchList);
+    if (!this.watchList.includes(item)) this.watchList.push(item);
   }
   deleteMovieInFavorite(movie: any) {
     this.favoriteList = this.favoriteList.filter((el) => el.id !== movie.id);
