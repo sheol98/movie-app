@@ -53,4 +53,5 @@ export class MovieListComponent {
   deleteMovieInWatchList(movie: any) {
     this.watchList = this.watchList.filter((el) => el.id !== movie.id);
   }
+  a = 2;
 }
