@@ -14,7 +14,7 @@ export class MovieCardComponent {
   @Output() addToWatchList = new EventEmitter<any>();
 
   onAddToFavorite() {
-    this.addToFavoriteList.emit();
+    this.addToFavoriteList.emit()
   }
   onAddToWatchList() {
     this.addToWatchList.emit();

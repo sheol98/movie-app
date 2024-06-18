@@ -2,7 +2,7 @@
   @for (movie of movies; track movie) {
   <app-movie-card
     [data]="movie"
-    (addToFavorite)="pushToFavorite(movie)"
+    (addToFavoriteList)="pushToFavorite(movie)"
     (addToWatchList)="pushToWatchList(movie)"
   ></app-movie-card>
   }
