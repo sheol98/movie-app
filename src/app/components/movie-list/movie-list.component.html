@@ -1,0 +1,47 @@
+<div class="cards__container">
+  @for (movie of movies; track movie) {
+  <app-movie-card
+    [data]="movie"
+    (addToFavoriteList)="pushToFavorite(movie)"
+    (addToWatchList)="pushToWatchList(movie)"
+  ></app-movie-card>
+  }
+</div>
+
+@if (favoriteList.length>0) {
+<h2>Список улюблених фільмів</h2>
+<div class="favorite__movies">
+  @for (movie of favoriteList; track $index) {
+  <div class="card__container">
+    <div class="card__img">
+      <img [src]="movie.imgUrl" alt="{{ movie.title }}" />
+    </div>
+    <div class="card__text">
+      <h3 class="card__title">{{ movie.title }}</h3>
+      <p class="card__about">{{ movie.about }}</p>
+    </div>
+    <button class="card__delete" (click)="deleteMovieInFavorite(movie)">
+      Видалити
+    </button>
+  </div>
+  }
+</div>
+} @if (watchList.length>0) {
+<h2>Список фільмів дивитися пізніше</h2>
+<div class="favorite__movies">
+  @for (movie of watchList; track $index) {
+  <div class="card__container">
+    <div class="card__img">
+      <img [src]="movie.imgUrl" alt="{{ movie.title }}" />
+    </div>
+    <div class="card__text">
+      <h3 class="card__title">{{ movie.title }}</h3>
+      <p class="card__about">{{ movie.about }}</p>
+    </div>
+    <button class="card__delete" (click)="deleteMovieInWatchList(movie)">
+      Видалити
+    </button>
+  </div>
+  }
+</div>
+}
